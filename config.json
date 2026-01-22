@@ -158,7 +158,7 @@
                                 "schema": "GroceryItem",
                                 "defaultSearch": {
                                     "text": "organic rice basmati",
-                                    "location": "19.1529,72.935"
+                                    "location": "12.8862, 77.6659"
                                 }
                             },
                             {
@@ -167,7 +167,7 @@
                                 "schema": "FoodAndBeverageItem",
                                 "defaultSearch": {
                                     "text": "veg pizza margherita",
-                                    "location": "28.5375,77.2408"
+                                    "location": "12.8802, 777.5231"
                                 }
                             }
                         ]
