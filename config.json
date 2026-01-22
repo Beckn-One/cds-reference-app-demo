@@ -415,7 +415,9 @@
                 "api": "/beckn/catalog/publish",
                 "context": {
                     "action": "catalog_publish",
-                    "ttl": "PT30S"
+                    "ttl": "PT30S",
+                    "bpp_id": "ev-bpp.example.com",
+                    "bpp_uri": "https://ev-bpp.example.com/bpp"
                 },
                 "labels": {
                     "dropTitle": "Upload Station Blueprint",
@@ -634,7 +636,9 @@
                 "api": "/beckn/catalog/publish",
                 "context": {
                     "action": "catalog_publish",
-                    "ttl": "PT30S"
+                    "ttl": "PT30S",
+                    "bpp_id": "health-bpp.example.com",
+                    "bpp_uri": "https://health-bpp.example.com/bpp"
                 },
                 "labels": {
                     "dropTitle": "Upload Service Catalog",
