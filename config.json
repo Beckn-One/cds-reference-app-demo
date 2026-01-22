@@ -116,12 +116,12 @@
         "schemas": {
             "GroceryItem": {
                 "label": "Grocery",
-                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/GroceryItem/v1/context.jsonld#GroceryItem",
+                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/context.jsonld#GroceryItem",
                 "rendererUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/ondc-schema/schema/GroceryItem/v1/renderer.json"
             },
             "FoodAndBeverageItem": {
                 "label": "Food & Beverage",
-                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/FoodAndBeverageItem/v1/context.jsonld#FoodAndBeverageItem",
+                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/FoodAndBeverageItem/v1/context.jsonld#FoodAndBeverageItem",
                 "rendererUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/ondc-schema/schema/FoodAndBeverageItem/v1/renderer.json"
             }
         },
@@ -132,7 +132,10 @@
                 "subtitle": "Search across the ONDC networks",
                 "api": "/beckn/discover",
                 "context": {
-                    "action": "discover"
+                    "action": "discover",
+                    "ttl": "PT30S",
+                    "bap_id": "grocery-app.example.com",
+                    "bap_uri": "https://grocery-app.example.com/bap"
                 },
                 "ui": {
                     "layout": "grid",
@@ -199,10 +202,12 @@
                 "type": "form",
                 "title": "Publish Catalog",
                 "subtitle": "Empower your business distribution. Upload your detailed product catalog to instantly reach buyers across the ONDC network.",
-                "api": "/beckn/v2/catalog/publish",
+                "api": "/beckn/catalog/publish",
                 "context": {
                     "action": "catalog_publish",
-                    "ttl": "PT30S"
+                    "ttl": "PT30S",
+                    "bpp_id": "bpp.example.com",
+                    "bpp_uri": "https://bpp.example.com"
                 },
                 "labels": {
                     "dropTitle": "Drag & Drop your catalog",
@@ -335,7 +340,7 @@
         "schemas": {
             "EVChargingStation": {
                 "label": "Charging Station",
-                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/EVChargingStation/v1/context.jsonld",
+                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/EVChargingStation/v1/context.jsonld",
                 "rendererUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/ondc-schema/schema/EVChargingStation/v1/renderer.json"
             }
         },
@@ -540,12 +545,12 @@
         "schemas": {
             "TeleconsultationService": {
                 "label": "Teleconsultation",
-                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/TeleconsultationService/v1/context.jsonld",
+                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/TeleconsultationService/v1/context.jsonld",
                 "rendererUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/ondc-schema/schema/TeleconsultationService/v1/renderer.json"
             },
             "DiagnosticService": {
                 "label": "Diagnostics",
-                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/draft/schema/DiagnosticService/v1/context.jsonld",
+                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/DiagnosticService/v1/context.jsonld",
                 "rendererUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/ondc-schema/schema/DiagnosticService/v1/renderer.json"
             }
         },
