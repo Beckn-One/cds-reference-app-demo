@@ -158,7 +158,8 @@
                                 "schema": "GroceryItem",
                                 "defaultSearch": {
                                     "text": "organic rice basmati",
-                                    "location": "12.8862, 77.6659"
+                                    "location": "12.8862, 77.6659",
+                                    "jsonpath": "$[?(@.beckn:itemAttributes.nutritionalInfo.nutrient==\"Protein\" && @.beckn:itemAttributes.dietaryClassification == \"veg\")]"
                                 }
                             },
                             {
@@ -167,7 +168,8 @@
                                 "schema": "FoodAndBeverageItem",
                                 "defaultSearch": {
                                     "text": "veg pizza margherita",
-                                    "location": "12.8802, 777.5231"
+                                    "location": "12.8802, 77.5231",
+                                    "jsonpath": "$[?(@.beckn:itemAttributes.size==\"Medium\" && @.beckn:itemAttributes.toppings[*] == \"Olives\")]"
                                 }
                             }
                         ]
@@ -374,7 +376,8 @@
                                 "schema": "EVChargingStation",
                                 "defaultSearch": {
                                     "text": "CCS2 Fast Charger",
-                                    "location": "12.9716,77.5946"
+                                    "location": "12.9716,77.5946",
+                                    "jsonpath": "$[?(@.beckn:itemAttributes.connectorType == 'CCS2' && @.beckn:itemAttributes.maxPowerKW >= 50)]"
                                 }
                             }
                         ]
