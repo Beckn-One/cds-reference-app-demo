@@ -409,7 +409,7 @@
                 "type": "form",
                 "title": "Publish Station",
                 "subtitle": "Seamlessly onboard your charging infrastructure. Upload station details to make them visible to EV drivers network-wide.",
-                "api": "/beckn/v2/catalog/publish",
+                "api": "/beckn/catalog/publish",
                 "context": {
                     "action": "catalog_publish",
                     "ttl": "PT30S"
@@ -628,7 +628,7 @@
                 "type": "form",
                 "title": "Publish Healthcare Services",
                 "subtitle": "Expand your reach. Upload your healthcare services catalog to connect with patients across the network.",
-                "api": "/beckn/v2/catalog/publish",
+                "api": "/beckn/catalog/publish",
                 "context": {
                     "action": "catalog_publish",
                     "ttl": "PT30S"

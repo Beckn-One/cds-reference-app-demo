@@ -1,6 +1,6 @@
 # Configuration Guide
 
-This guide explains the structure and common patterns in the `config.json` file for the ONDC Reference Application.
+This guide explains the structure and common patterns in the `config.json` file for the **CDS Reference Application**.
 
 ## Overview
 
@@ -66,7 +66,7 @@ The following values are **identical** across all three reference themes (Retail
         }
     },
     "catalog-publish": {
-        "api": "/beckn/v2/catalog/publish",
+        "api": "/beckn/catalog/publish",
         "context": {
             "action": "catalog_publish",
             "ttl": "PT30S"
@@ -170,7 +170,7 @@ Identical across all themes:
 ```json
 "catalog-publish": {
     "type": "form",
-    "api": "/beckn/v2/catalog/publish",
+    "api": "/beckn/catalog/publish",
     "context": {
         "action": "catalog_publish",
         "ttl": "PT30S"
