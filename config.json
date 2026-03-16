@@ -3,7 +3,7 @@
         "$schema": "../src/config/config.schema.json",
         "endpoint": "/retail",
         "app": {
-            "title": "ONDC Merchant",
+            "title": "Grocery Store",
             "logo": "/assets/logo.png",
             "favicon": "/vite.svg"
         },
@@ -76,8 +76,8 @@
         },
         "layout": {
             "header": {
-                "title": "ONDC Retail Portal",
-                "subtitle": "Manage and Discover Products",
+                "title": "Grocery Store",
+                "subtitle": "Manage and discover grocery products",
                 "logo": "/assets/logo.png",
                 "background": "#008060",
                 "color": "#ffffff"
@@ -87,7 +87,7 @@
                 "color": "#484f56",
                 "activeColor": "#008060",
                 "sectionTitle": "Retail / Grocery",
-                "footer": "ONDC Retail Network",
+                "footer": "Retail Network",
                 "items": [
                     {
                         "id": "bap",
@@ -96,6 +96,15 @@
                         "icon": "ShoppingBag",
                         "routes": [
                             "discovery"
+                        ]
+                    },
+                    {
+                        "id": "bap-subscribe",
+                        "title": "Subscribe (BAP)",
+                        "description": "Catalog subscriptions",
+                        "icon": "NotificationsActive",
+                        "routes": [
+                            "subscribe"
                         ]
                     },
                     {
@@ -129,7 +138,7 @@
             "discovery": {
                 "type": "search",
                 "title": "Discover Items",
-                "subtitle": "Search across the ONDC networks",
+                "subtitle": "Search across the networks",
                 "api": "/beckn/discover",
                 "context": {
                     "action": "discover",
@@ -158,8 +167,7 @@
                                 "schema": "GroceryItem",
                                 "defaultSearch": {
                                     "text": "organic rice basmati",
-                                    "location": "12.8862, 77.6659",
-                                    "jsonpath": "$[?(@.beckn:itemAttributes.nutritionalInfo.nutrient==\"Protein\" && @.beckn:itemAttributes.dietaryClassification == \"veg\")]"
+                                    "location": "19.1529,72.935"
                                 }
                             },
                             {
@@ -168,8 +176,7 @@
                                 "schema": "FoodAndBeverageItem",
                                 "defaultSearch": {
                                     "text": "veg pizza margherita",
-                                    "location": "12.8802, 77.5231",
-                                    "jsonpath": "$[?(@.beckn:itemAttributes.size==\"Medium\" && @.beckn:itemAttributes.toppings[*] == \"Olives\")]"
+                                    "location": "28.5375,77.2408"
                                 }
                             }
                         ]
@@ -185,7 +192,7 @@
                     "modeAiTitle": "AI Product Search",
                     "modeNetworkTitle": "Network Discovery",
                     "modeAiSub": "Experience the power of AI. Simply describe what you're looking for, and we'll find the best matches across the network.",
-                    "modeNetworkSub": "Explore the ONDC network using advanced location filters and JSONPath expressions for developers and power users.",
+                    "modeNetworkSub": "Explore the network using advanced location filters and JSONPath expressions for developers and power users.",
                     "tabAi": "AI Search",
                     "tabNetwork": "Network Discovery",
                     "searchPlaceholder": "Describe what you want (e.g. 'Organic spices from Kerala')...",
@@ -203,7 +210,7 @@
             "catalog-publish": {
                 "type": "form",
                 "title": "Publish Catalog",
-                "subtitle": "Empower your business distribution. Upload your detailed product catalog to instantly reach buyers across the ONDC network.",
+                "subtitle": "Empower your business distribution. Upload your detailed product catalog to instantly reach buyers across the network.",
                 "api": "/beckn/catalog/publish",
                 "context": {
                     "action": "catalog_publish",
@@ -222,6 +229,52 @@
                     "resetButton": "Upload Another Catalog",
                     "publishButton": "Publish Catalog",
                     "publishingButton": "Publishing..."
+                }
+            },
+            "subscribe": {
+                "type": "subscribe",
+                "title": "Subscribe to Catalog Updates",
+                "subtitle": "Create a BAP subscription to receive grocery catalog updates.",
+                "api": "/beckn/catalog/subscriptions",
+                "context": {
+                    "action": "catalog_subscribe",
+                    "ttl": "PT10M",
+                    "bap_id": "bap.demo.beckn",
+                    "bap_uri": "http://localhost:5173"
+                },
+                "networks": [
+                    {
+                        "id": "ondc-retail-grocery",
+                        "name": "Retail Grocery",
+                        "schemaTypes": ["grocery", "fnb"]
+                    }
+                ],
+                "schemaTypes": [
+                    {
+                        "key": "grocery",
+                        "label": "Grocery Items",
+                        "value": "https://becknprotocol.io/schema/GroceryItem/v1/context.jsonld#GroceryItem",
+                        "schemaName": "GroceryItem"
+                    },
+                    {
+                        "key": "fnb",
+                        "label": "Food & Beverage Items",
+                        "value": "https://becknprotocol.io/schema/FoodAndBeverageItem/v1/context.jsonld#FoodAndBeverageItem",
+                        "schemaName": "FoodAndBeverageItem"
+                    }
+                ],
+                "defaults": {
+                    "subscriberName": "Grocery Catalog Subscriber",
+                    "subscriberUrl": "https://bap.demo.beckn",
+                    "subscriberType": "BAP",
+                    "networkId": "ondc-retail-grocery",
+                    "schemaTypes": ["grocery"],
+                    "callbackUrl": "http://****/catalog/push"
+                },
+                "labels": {
+                    "submit": "Subscribe",
+                    "submitting": "Subscribing...",
+                    "success": "Subscribed successfully (id: {id})"
                 }
             }
         }
@@ -376,8 +429,7 @@
                                 "schema": "EVChargingStation",
                                 "defaultSearch": {
                                     "text": "CCS2 Fast Charger",
-                                    "location": "12.9716,77.5946",
-                                    "jsonpath": "$[?(@.beckn:itemAttributes.connectorType == 'CCS2' && @.beckn:itemAttributes.maxPowerKW >= 50)]"
+                                    "location": "12.9716,77.5946"
                                 }
                             }
                         ]
@@ -393,7 +445,7 @@
                     "modeAiTitle": "AI Charger Search",
                     "modeNetworkTitle": "Network Discovery",
                     "modeAiSub": "Talk to the network. Describe your vehicle or range needs, and we'll locate the perfect charging point.",
-                    "modeNetworkSub": "Explore the ONDC network using advanced location filters and protocol-level JSONPath queries.",
+                    "modeNetworkSub": "Explore the network using advanced location filters and protocol-level JSONPath queries.",
                     "tabAi": "Smart Search",
                     "tabNetwork": "Manual Mode",
                     "searchPlaceholder": "Where do you want to charge? (e.g. 'Near MG Road with CCS2')",
@@ -412,12 +464,10 @@
                 "type": "form",
                 "title": "Publish Station",
                 "subtitle": "Seamlessly onboard your charging infrastructure. Upload station details to make them visible to EV drivers network-wide.",
-                "api": "/beckn/catalog/publish",
+                "api": "/beckn/v2/catalog/publish",
                 "context": {
                     "action": "catalog_publish",
-                    "ttl": "PT30S",
-                    "bpp_id": "ev-bpp.example.com",
-                    "bpp_uri": "https://ev-bpp.example.com/bpp"
+                    "ttl": "PT30S"
                 },
                 "labels": {
                     "dropTitle": "Upload Station Blueprint",
@@ -633,12 +683,10 @@
                 "type": "form",
                 "title": "Publish Healthcare Services",
                 "subtitle": "Expand your reach. Upload your healthcare services catalog to connect with patients across the network.",
-                "api": "/beckn/catalog/publish",
+                "api": "/beckn/v2/catalog/publish",
                 "context": {
                     "action": "catalog_publish",
-                    "ttl": "PT30S",
-                    "bpp_id": "health-bpp.example.com",
-                    "bpp_uri": "https://health-bpp.example.com/bpp"
+                    "ttl": "PT30S"
                 },
                 "labels": {
                     "dropTitle": "Upload Service Catalog",
