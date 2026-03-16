@@ -269,7 +269,7 @@
                     "subscriberType": "BAP",
                     "networkId": "ondc-retail-grocery",
                     "schemaTypes": ["grocery"],
-                    "callbackUrl": "http://****/catalog/push"
+                    "callbackUrl": "https://34.14.221.66/catalog/push"
                 },
                 "labels": {
                     "submit": "Subscribe",
