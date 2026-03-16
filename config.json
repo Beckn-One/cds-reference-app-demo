@@ -167,7 +167,7 @@
                                 "schema": "GroceryItem",
                                 "defaultSearch": {
                                     "text": "organic rice basmati",
-                                    "location": "19.1529,72.935"
+                                    "location": ""
                                 }
                             },
                             {
@@ -176,7 +176,7 @@
                                 "schema": "FoodAndBeverageItem",
                                 "defaultSearch": {
                                     "text": "veg pizza margherita",
-                                    "location": "28.5375,77.2408"
+                                    "location": ""
                                 }
                             }
                         ]
@@ -429,7 +429,7 @@
                                 "schema": "EVChargingStation",
                                 "defaultSearch": {
                                     "text": "CCS2 Fast Charger",
-                                    "location": "12.9716,77.5946"
+                                    "location": ""
                                 }
                             }
                         ]
@@ -639,7 +639,7 @@
                                 "schema": "TeleconsultationService",
                                 "defaultSearch": {
                                     "text": "general physician consultation",
-                                    "location": "12.9716,77.5946"
+                                    "location": ""
                                 }
                             },
                             {
@@ -648,7 +648,7 @@
                                 "schema": "DiagnosticService",
                                 "defaultSearch": {
                                     "text": "blood test complete hemogram",
-                                    "location": "19.0760,72.8777"
+                                    "location": ""
                                 }
                             }
                         ]
