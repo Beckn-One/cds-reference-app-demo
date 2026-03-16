@@ -125,13 +125,8 @@
         "schemas": {
             "GroceryItem": {
                 "label": "Grocery",
-                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/GroceryItem/v1/context.jsonld#GroceryItem",
+                "contextUrl": "https://becknprotocol.io/schema/GroceryItem/v1/context.jsonld#GroceryItem",
                 "rendererUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/ondc-schema/schema/GroceryItem/v1/renderer.json"
-            },
-            "FoodAndBeverageItem": {
-                "label": "Food & Beverage",
-                "contextUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/refs/heads/main/schema/FoodAndBeverageItem/v1/context.jsonld#FoodAndBeverageItem",
-                "rendererUrl": "https://raw.githubusercontent.com/beckn/protocol-specifications-new/ondc-schema/schema/FoodAndBeverageItem/v1/renderer.json"
             }
         },
         "views": {
@@ -167,15 +162,6 @@
                                 "schema": "GroceryItem",
                                 "defaultSearch": {
                                     "text": "organic rice basmati",
-                                    "location": ""
-                                }
-                            },
-                            {
-                                "label": "Food & Beverage",
-                                "value": "fnb",
-                                "schema": "FoodAndBeverageItem",
-                                "defaultSearch": {
-                                    "text": "veg pizza margherita",
                                     "location": ""
                                 }
                             }
@@ -246,7 +232,7 @@
                     {
                         "id": "ondc-retail-grocery",
                         "name": "Retail Grocery",
-                        "schemaTypes": ["grocery", "fnb"]
+                        "schemaTypes": ["grocery"]
                     }
                 ],
                 "schemaTypes": [
@@ -255,12 +241,6 @@
                         "label": "Grocery Items",
                         "value": "https://becknprotocol.io/schema/GroceryItem/v1/context.jsonld#GroceryItem",
                         "schemaName": "GroceryItem"
-                    },
-                    {
-                        "key": "fnb",
-                        "label": "Food & Beverage Items",
-                        "value": "https://becknprotocol.io/schema/FoodAndBeverageItem/v1/context.jsonld#FoodAndBeverageItem",
-                        "schemaName": "FoodAndBeverageItem"
                     }
                 ],
                 "defaults": {
